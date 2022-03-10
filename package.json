@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node ./config/wwww",
-    "start": "nodemon ./config/www"
+    "run": "nodemon ./config/wwww",
+    "start": "node ./config/www"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "17.x"
+  },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "compression": "^1.7.4",
