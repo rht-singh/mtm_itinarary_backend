@@ -1,4 +1,4 @@
-const quotation = require("../models/index");
+const quotation = require("../models/index.js");
 const fs = require("fs");
 exports.deletePackages = async function (req, res, next) {
   try {

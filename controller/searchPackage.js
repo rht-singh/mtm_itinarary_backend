@@ -1,9 +1,9 @@
-const quotation = require("../models/index");
+const quotation = require("../models/index.js");
 
 exports.search = async function (req, res) {
   try {
     const { search } = req.query;
-    if (search.length) {
+    if (search?.length) {
       const getList = await quotation.find({
         title: { $regex: search, $options: "i" },
       });

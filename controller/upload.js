@@ -1,5 +1,5 @@
-const quotation = require("../models/index");
-const joiValidate = require("../models/joi.schema");
+const quotation = require("../models/index.js");
+const joiValidate = require("../models/joi.schema.js");
 
 exports.createItinarary = async (req, res, next) => {
   try {
