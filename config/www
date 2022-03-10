@@ -1,7 +1,7 @@
 const server = require("./server.js");
 const app = require("../app.js");
-const Port = process.env.PORT || 4000;
 require("dotenv").config();
+const Port = process.env.PORT || 4000;
 const db = require("./db.js");
 app.listen(Port, () => {
   console.log(`server started at ${Port}`);
