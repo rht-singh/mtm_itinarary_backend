@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "nodemon ./config/wwww",
+    "run": "nodemon ./config/www",
     "start": "node ./config/www"
   },
   "keywords": [],
