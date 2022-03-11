@@ -1,4 +1,4 @@
-const quotation = require("../models/index");
+const quotation = require("../models/index.js");
 
 exports.getAllPackages = async function (req, res, next) {
   try {

@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const multer = require("multer");
-const { getAllPackages } = require("../controller/getAllPackages");
-const { SinglePackages } = require("../controller/getSinglePackage");
-const { login } = require("../controller/login");
-const { search } = require("../controller/searchPackage");
-const { createItinarary } = require("../controller/upload");
-const { deletePackages } = require("../controller/delete");
+const { getAllPackages } = require("../controller/getAllPackages.js");
+const { SinglePackages } = require("../controller/getSinglePackage.js");
+const { login } = require("../controller/login.js");
+const { search } = require("../controller/searchPackage.js");
+const { createItinarary } = require("../controller/upload.js");
+const { deletePackages } = require("../controller/delete.js");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
