@@ -6,6 +6,7 @@ const { login } = require("../controller/login.js");
 const { search } = require("../controller/searchPackage.js");
 const { createItinarary } = require("../controller/upload.js");
 const { deletePackages } = require("../controller/delete.js");
+const { getPdf } = require("../controller/getPdf");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -20,6 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.route("/search").get(search);
+router.route("/getPdf").post(getPdf);
 router.route("/login").get(login);
 router.route("/createItinarary").post(upload.single("photo"), createItinarary);
 router.route("/getAllPackages").get(getAllPackages);

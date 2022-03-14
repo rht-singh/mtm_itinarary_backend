@@ -3,13 +3,18 @@ const quotation = require("../models/index.js");
 exports.search = async function (req, res) {
   try {
     const { search } = req.query;
-    if (search?.length) {
+    var regExp = /[a-zA-Z]/g;
+    if (regExp.test(search)) {
       const getList = await quotation.find({
         title: { $regex: search, $options: "i" },
       });
       if (getList) return res.json({ success: true, getList: getList });
       else return res.json({ success: false, message: "No data found" });
-    } else res.json({ success: false, message: "Please enter search value" });
+    } else {
+      const getList = await quotation.find({});
+      if (getList) return res.json({ success: true, getList: getList });
+      else return res.json({ success: false, message: "No data found" });
+    }
   } catch (err) {
     console.log(err);
   }
