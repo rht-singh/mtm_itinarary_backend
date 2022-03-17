@@ -3,7 +3,7 @@ const joiValidate = require("../models/joi.schema.js");
 
 exports.createItinarary = async (req, res, next) => {
   try {
-    const photo = req.file;
+    const file = req.file;
     const {
       title,
       amount,
@@ -11,24 +11,9 @@ exports.createItinarary = async (req, res, next) => {
       package_start_Place,
       min_age,
       max_guest,
+      img_url,
     } = req.body;
-    if (!photo) {
-      await joiValidate.validateAsync(req.body, { abortEarly: false });
-      const create = new quotation({
-        title,
-        amount,
-        durations,
-        package_start_Place,
-        min_age,
-        img_url,
-        max_guest,
-        img_url: req.body.img_url,
-      });
-      await create.save();
-      res.json({ sucess: true, quotation: "Created successfully" });
-    }
-    let url = `${req.protocol}://${req.get("host")}`;
-    const img_url = `url/${req.file.filename}`;
+    const pdf_url = `/${req.file.filename}`;
     await joiValidate.validateAsync(req.body, { abortEarly: false });
     const create = new quotation({
       title,
@@ -36,6 +21,7 @@ exports.createItinarary = async (req, res, next) => {
       durations,
       package_start_Place,
       min_age,
+      quotation: pdf_url,
       img_url,
       max_guest,
     });

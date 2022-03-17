@@ -10,11 +10,11 @@ const { getPdf } = require("../controller/getPdf");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/");
+    cb(null, "uploads/file");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + "-" + uniqueSuffix + ".png");
+    cb(null, file.fieldname + "-" + uniqueSuffix + ".pdf");
   },
 });
 
@@ -23,7 +23,7 @@ const upload = multer({ storage: storage });
 router.route("/search").get(search);
 router.route("/getPdf").post(getPdf);
 router.route("/login").get(login);
-router.route("/createItinarary").post(upload.single("photo"), createItinarary);
+router.route("/createItinarary").post(upload.single("file"), createItinarary);
 router.route("/getAllPackages").get(getAllPackages);
 router.route("/delete-Quotation").delete(deletePackages);
 router.route("/getSinglePackage").get(SinglePackages);

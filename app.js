@@ -11,7 +11,7 @@ app.use(cors());
 app.use(helmet(), compression());
 
 // app.use(express.static("./uploads"));
-const directory = path.join(__dirname, "/uploads");
+const directory = path.join(__dirname, "/uploads/file");
 app.use(express.static(directory));
 app.use("/api/v1", routing);
 

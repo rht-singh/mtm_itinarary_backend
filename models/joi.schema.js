@@ -12,6 +12,7 @@ const createQuotation = Joi.object({
   min_age: Joi.number().required(),
 
   max_guest: Joi.number().required(),
+  img_url: Joi.string().required().trim(),
 });
 
 module.exports = createQuotation;
